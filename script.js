@@ -42,13 +42,13 @@ var minutes = min + updatedValues[1];
   if(value === true){
     document.getElementById('meridian').innerText = hours>11 ? 'PM' : 'AM';
     document.getElementById('meridian').style.display='inline';
-    document.getElementById('toggleHrs').innerText='24 Hr';
+    document.getElementById('toggleHrs').innerText='Change to 24Hr';
     hourFor = hours >12 ? hours-12:hours;
   }else{
     hourFor = hours;
     document.getElementById('meridian').innerText ='';
     document.getElementById('meridian').style.display='none';
-    document.getElementById('toggleHrs').innerText='12 Hr'; 
+    document.getElementById('toggleHrs').innerText='Chnage to 12Hr'; 
   }
 
   document.getElementById('hr').innerText = hourFor>9 ? hourFor:'0'+hourFor;
