@@ -2,6 +2,15 @@
 const monthName = ['January', 'Febuary','March','April','May', 'June','July','August','September','October','November','December'];
 const dayName = ['Sun','Mon','Tues','Wednes','Thurs','Fri','Satur'];
 
+// function for switching between 12hrs/24hrs format
+let value = true;
+function toggleHrs(){
+    if(value === true) {
+        value = false;
+    }else {
+        value = true;
+    }   
+}; 
 
 // update time function
 function updateTime(){
@@ -18,7 +27,21 @@ function updateTime(){
 
 // manipulating the data retrieved from Date(Obj)-->
   const centiseconds = parseInt(milliseconds/100);
-  let hourFor = hours >12 ? hours-12:hours;
+  let hourFor = 0;
+
+ // 12/24 hrs format and display of the meridian 
+  if(value === true){
+    document.getElementById('meridian').innerText = hours>11 ? 'PM' : 'AM';
+    document.getElementById('meridian').style.display='inline';
+    document.getElementById('toggleHrs').innerText='24 Hr';
+    hourFor = hours >12 ? hours-12:hours;
+  }else{
+    hourFor = hours;
+    document.getElementById('meridian').innerText ='';
+    document.getElementById('meridian').style.display='none';
+    document.getElementById('toggleHrs').innerText='12 Hr'; 
+  }
+
 
   document.getElementById('hr').innerText = hourFor>9 ? hourFor:'0'+hourFor;
   document.getElementById('min').innerText = minutes>9 ? minutes:'0'+minutes ;
@@ -26,25 +49,8 @@ function updateTime(){
   document.getElementById('centiseconds').innerText = '.' + centiseconds;
   document.getElementById('year').innerText = year;
   document.getElementById('month').innerText = monthName[month]+',';
-  document.getElementById('day').innerText = dayName[day]+'day,';
-  document.getElementById('meridian').innerText = hours>11 ? 'PM' : 'AM'; 
+  document.getElementById('day').innerText = dayName[day]+'day,'; 
 };
-
-// function for switching between 12hrs/24hrs format
-let value = true;
-function toggleHrs(){
-    if(value === true) {
-        value = false;
-        hourFor = hours;
-        document.getElementById('hr').innerText = hourFor>9 ? hourFor:'0'+hourFor;
-    }
-    else {
-        value = true;
-        hourFor = hours >12 ? hours-12:hours;
-        document.getElementById('hr').innerText = hourFor>9 ? hourFor:'0'+hourFor;
-    }
-    
-}; 
 
 
 setInterval(updateTime,100);

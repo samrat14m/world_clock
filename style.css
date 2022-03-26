@@ -1,15 +1,17 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: rgb(10, 13, 17);
 }
 .main-container {
   display: flex;
-  height: 100vh;
+  height: 70vh;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 #container {
-  color: rgb(0, 0, 173);
+  color: rgb(255, 255, 255);
   width: fit-content;
   display: flex;
   align-items: center;
@@ -20,16 +22,17 @@ body {
   letter-spacing: 0.4vh;
   line-height: 2rem;
   border: 3px solid rgb(0, 0, 173);
-  padding: 10px;
+  padding: 10px 25px;
   border-radius: 15px;
   -webkit-box-reflect: below 1px
-    linear-gradient(transparent, rgba(255, 255, 255, 0.2));
+    linear-gradient(transparent, rgba(255, 255, 255, 0.33));
 }
 
 #container:hover {
   color: rgb(255, 255, 255);
-  background-color: rgb(0, 0, 173);
-  border-color: rgb(253, 255, 112);
+  background-color: rgb(55, 55, 255);
+  box-shadow: 0 0 30px rgb(0, 0, 173);
+  border-color: ;
 }
 
 #date {
@@ -37,11 +40,26 @@ body {
 }
 #centiseconds {
   font-size: 1.5rem;
-  margin-left: -2.5vh;
+  margin-left: -2vh;
 }
 
-.toggleHrs {
+#meridian {
+  font-size: 1.8rem;
+  background-color: rgb(0, 0, 173);
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+#toggleHrs {
   font-size: 1rem;
-  color: rgb(0, 0, 173);
-  margin: 100px 0 0 5px;
+  background-color: rgb(0, 0, 60);
+  color: rgb(255, 255, 255);
+  margin: 100px 0 10px 0;
+  padding: 10px;
+  border-color: rgb(255, 255, 255);
+  border-radius: 10px;
+}
+#toggleHrs:hover {
+  background-color: rgb(0, 0, 120);
+  transform: translateY(-2px);
 }
