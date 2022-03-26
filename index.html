@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clock</title>
+    <title>World Clock</title>
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="main-container">
+        <div>
                 <select name="city" id="city">
                     <option value="india">INDIA</option>
                     <option value="london">LONDON</option>
@@ -18,7 +19,8 @@
                     <option value="new_york">NEW YORK</option>
                 </select>
                 
-            <button onclick="toggleHrs()" id="toggleHrs">24 Hr</button>
+                <button onclick="toggleHrs()" id="toggleHrs">24 Hr</button>
+        </div>
 
             <div id="container">
                 <div id="time">
@@ -34,6 +36,7 @@
                 </div>
                 <div id="date">
                     <span id="day">Sat</span>
+                    <span id="dayNo">20</span>
                     <span id="month">Feb</span>
                     <span id="year">1997</span>
                 </div>
