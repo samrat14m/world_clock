@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  color: rgb(0, 0, 173);
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 2rem;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  letter-spacing: 0.4vh;
+  line-height: 2rem;
+  border: 3px solid rgb(0, 0, 173);
+  padding: 10px;
+  border-radius: 15px;
+  -webkit-box-reflect: below 1px
+    linear-gradient(transparent, rgba(255, 255, 255, 0.2));
+}
+#date {
+  font-size: 1rem;
+}
+#centiseconds {
+  font-size: 1.5rem;
+  margin-left: -2.5vh;
+}
+
+.toggleHrs {
+  font-size: 1rem;
+  color: rgb(0, 0, 173);
+  margin: 100px 0 0 5px;
+}
